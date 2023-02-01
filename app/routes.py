@@ -55,8 +55,3 @@ def not_found(e):
         return redirect(request.referrer)
     else:
         return redirect('/ip')
-
-
-@app.route('/about', methods=['GET'])
-def about():
-    return render_template('about.html', title='Sobre')
