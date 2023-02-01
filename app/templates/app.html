@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+    {% block title %} Buscar {% endblock %}
+
+    {% block navbar %}
+            <div class="div-input">
+                <input type="text" id="findIp" placeholder="Buscar info pelo ip ex: 1.1.1.1 ">
+                <button class="btn-input" onclick="infoByIp()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="div-input" style="width: 19%;" onclick="infoByName()">
+                <input type="url" id="findName" placeholder="Buscar info pela url ex: www.example.com ">
+                <button class="btn-input"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+    {% endblock %}
+
+    {% block page %}
+    <div class="div-table" id="ipTable">
+
+    </div>
+
+    <div class="about-content" id="about">
+        <h1 class="title"> Sobre:</h1>
+        <a class="about-link"><h3>Api/Site para buscar a informações sobre um ip </h3></a>
+        <a class="about-link"><h3> Feito por um estudante python com Django e PostgreSql </h3></a>
+        <h1 class="title"> Ips: </h1>
+        <a class="about-link" href="/about"><h3> /about - Pagina sobre o projeto </h3></a>
+        <a class="about-link" href="/ip"><h3> /ip - Pagina para buscar informações de um Ip </h3></a>
+        <h1 class="title"> Api: </h1>
+        <a class="about-link" href="/api/ip="><h3> /api/ip=Ip - Retorna um Json com as informações do ip </h3></a>
+        <a class="about-link" href="/api/ips/json"><h3> /api/ips/json - Recebe um Json no cabeçalho e retorna um Json com as informações do ip </h3></a>
+    </div>
+
+    {% include "map.html" %}
+
+    {% endblock %}
