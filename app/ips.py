@@ -8,10 +8,15 @@ def get_ip_data(ip):
     return result.json()
 
 
-def find_ips_from_json(ips):
+def find_ips_from_json(json):
     data = []
-    for x in ips:
-        data.append(get_ip_data(x['ip']))
+    print(json)
+    if len(json['ips']) > 1:
+        for x in json['ips']:
+            print(x)
+            data.append(get_ip_data(x))
+    else:
+        data = get_ip_data(json['ips'])
     return data
 
 

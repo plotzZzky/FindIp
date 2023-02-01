@@ -41,7 +41,7 @@ def get_ip_info(ip):
 
 @app.route('/api/ips/json', methods=['GET'])
 def get_ips_info_from_json():
-    ips = request.json()
+    ips = request.get_json()
     data = find_ips_from_json(ips)
     return jsonify(data)
 
